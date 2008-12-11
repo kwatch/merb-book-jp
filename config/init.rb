@@ -26,15 +26,19 @@ Merb::BootLoader.before_app_loads do
    Merb::Plugins.config[:Merb_babel] = { 
      :default_language    => 'en',
      :available_languages => [
-            {:name => "English", :code => 'en'}, 
-            {:name => "Français", :code => 'fr'}, 
-            {:name => "日本語", :code => 'jp'}, 
-            {:name => "Português", :code => 'pt'},
-            {:name => "Deutsch", :code => 'de'},
-            {:name => "中文", :code => 'zh'},
-            {:name => "Español", :code => "es"},
-            {:name => "Русский", :code => 'ru'},
-            {:name => "Bosanski", :code => "bs"}
+            {:name => "English",    :code => 'en'}, 
+            {:name => "Français",   :code => 'fr'}, 
+            {:name => "日本語",        :code => 'jp'}, 
+            {:name => "Português",  :code => 'pt'},
+            {:name => "Deutsch",    :code => 'de'},
+            {:name => "中文",       :code => 'zh', :home => '首页', :next => '下一页', :previous => '前一页', :table_of_contents => '目录'},
+            {:name => "Español",    :code => "es"},
+            {:name => "Русский",    :code => 'ru'},
+            {:name => "Bosanski",   :code => "bs"},
+            {:name => "Nederlands", :code => "nl"},
+            {:name => "العربية",    :code => "ar"},
+            {:name => "Български",  :code => "bg"},
+            {:name => "Italiano",   :code => "it"}
           ]
      }
    
@@ -42,4 +46,5 @@ end
  
 Merb::BootLoader.after_app_loads do
   # This will get executed after your app's classes have been loaded.
+  require 'maruku/ext/div'
 end

@@ -52,10 +52,10 @@ body {
 	margin-right: -6em;
 }
 
-div.maruku_toc{
-	float:right;
-	display: block;
+div.maruku_toc ul{
+	list-style: disc !important;
 }
+
 
 #language-switch{
 	float:left;
@@ -95,6 +95,12 @@ div#footer a, div#footer a:visited{
 	border:none !important;
 }
 
+div.notes{
+	background-color: #ccc;
+	padding: 1em;
+	border: 2px solid #999;
+}
+
 /* @end */
 
 /* @group Book styles */
@@ -102,6 +108,11 @@ div#footer a, div#footer a:visited{
 #book-content {
  	font-size: 1.3em;
  	text-align: left;
+}
+
+.rtl{
+direction: rtl;
+text-align: right !important;
 }
 
 
@@ -222,13 +233,23 @@ div#nav-links a:hover {
 /* @end */
 
 /* @group TOC */
-
 #table-of-contents {
  	display: none;
  	padding: 1em;
  	position: fixed;
  	top: 0;
  	background: #fff;
+}
+/* @end */
+
+/* @group references */
+div.footnotes li{ line-height: 0.5em}
+
+a[rev="footnote"] { 
+	float: right;
+	font-size: 0.7em;
+	line-height: 0.3em;
+	margin: -2em;
 }
 
 /* @end */
